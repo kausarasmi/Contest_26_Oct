@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: flex;
+}
+
+img{
+    height: 307px;
+width: 366px;
+margin-left: 99px;
+margin-top: 132px;
+margin-right: 34px;
+border-radius: 10px 10px 0px 0px;
+margin-bottom: 0;
+}
+
+h3{
+    /* position: absolute; */
+width: 253px;
+height: 32px;
+left: 115px;
+top: 451px;
+margin-left: 115px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 32px;
+
+/* identical to box height, or 200% */
+letter-spacing: 0.1px;
+
+color: #000000;
+
+
+}
+
+h2{
+    padding-left: 360px;
+}
+
+h4{
+    padding-left: 282px;
+    text-decoration: line-through;
+}
+.add{
+    padding-left: 117px;
+
+}

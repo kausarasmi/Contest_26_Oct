@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Module-7 React </title>
+</head>
+<body>
+    <div id="container"></div>
+
+</div>
+</body>
+<script>
+    let finalData=[]
+    let apiUrl = 'https://acciojob-module-7-sept-2022-default-rtdb.asia-southeast1.firebasedatabase.app/products.json';
+    fetch(apiUrl).then(response => {
+      return response.json();
+    }).then(data => {
+        finalData=data
+      // Work with JSON data here
+      console.log("===",data);
+      console.log(Object.values(data));
+      let values=Object.values(data)
+      let container = document.getElementById('container');
+    for (let i = 0; i < values.length; i++) {
+        let doc=values[i]
+        console.log(doc)
+        let element = document.createElement('div');
+        element.class='main'
+        let image = document.createElement('img');
+        let h3 = document.createElement('h3');
+        image.src=doc.productImage
+        image.className="image"
+        h3.innerHTML =doc.productName
+        h3.className="name"
+
+        let insideDiv = document.createElement('div');
+        insideDiv.className="insideDiv"
+        let oldPrice = document.createElement('h4');
+        let newPrice = document.createElement('h2');
+        newPrice.innerHTML=doc.newPrice
+        oldPrice.innerHTML=doc.oldPrice
+        insideDiv.appendChild(oldPrice);
+        insideDiv.appendChild(newPrice);
+
+        let cart = document.createElement('h3');
+        cart.innerHTML="Add to Cart"
+        cart.className ='add'
+        
+        element.appendChild(image);
+        element.appendChild(h3);
+        element.appendChild(insideDiv);
+        element.appendChild(cart);
+
+        container.appendChild(element);
+    };
+
+    }).catch(err => {
+        console.log(err);
+      
+    });
+    </script>
+</script>
+</html>
